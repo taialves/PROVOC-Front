@@ -1,1 +1,2 @@
-O arquivo `provoc.html` contém somente o conteúdo referente ao PROVOC, sem o layout do site do IFCE.
+- O arquivo `provoc.html` contém somente o conteúdo referente ao PROVOC, sem o layout do site do IFCE.
+- Acesse o site aqui [https://provoc-front.vercel.app/]
