@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teste Vocacional - IFCE Sobral</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dekko&display=swap" rel="stylesheet">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet" />
+
+  <style>
+    /* Reset básico */
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      font-family: "Montserrat", sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      padding: 1rem;
+    }
+
+    /* ========================= HERO SECTION ========================= */
+    .hero {
+      background: url("banner.png") no-repeat center center;
+      background-size: cover;
+      height: 60vh;
+      padding: 10vh 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero .container {
+      height: 100%;
+    }
+
+    /* Ajuste para títulos responsivos */
+    .hero-text h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      text-align: left;
+      font-family: "Oswald", sans-serif;
+      color: #f8f9fa;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      color: #f8f9fa;
+      font-weight: 600;
+    }
+
+    .hero-text span {
+      color: #00e88f;
+    }
+
+    .cta-btn {
+      margin-top: 30px;
+      width: 70%;
+      font-family: "Dekko", sans-serif;
+      /* Aplicando a fonte */
+      border-radius: 30px;
+      font-size: 2rem;
+      padding: 12px 24px;
+      background: rgba(4, 32, 15, 0.31);
+      border: 4px solid rgba(190, 190, 190, 0.67);
+      color: #f8f9fa;
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+
+    .cta-btn::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+      border: 4px solid #f8f9fa;
+      filter: url(#rough);
+      z-index: -1;
+      border-radius: 30px;
+    }
+
+    .cta-btn:hover {
+      background-color: #17842a;
+      transform: scale(1.05);
+    }
+
+
+    .cursos {
+      width: 100%;
+      padding: 0;
+      display: flex;
+    }
+
+    .cursos a {
+      text-decoration: none;
+      color: #f8f9fa;
+      font-size: 1.4rem;
+      padding: 0px 10px;
+      display: block;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .cursos a:hover {
+      text-decoration: underline;
+      color: #f8f9fa;
+    }
+
+    .c1 {
+      background-color: #17842a;
+    }
+
+    .c2 {
+      background-color: rgb(26, 106, 180);
+    }
+
+    .c3 {
+      background-color: rgb(163, 129, 18);
+    }
+
+    .c4 {
+      background-color: rgb(201, 59, 59);
+    }
+
+    /* ========================= CARDS DE INFORMAÇÕES ========================= */
+    #informacoes p {
+      font-size: 1rem;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .info-card img {
+      max-width: 80px;
+      margin-bottom: 15px;
+    }
+
+    .info-card h4 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* ========================= RODAPÉ ========================= */
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    /* ========================= RESPONSIVIDADE ========================= */
+    @media (min-width: 561px) and (max-width: 768px) {
+
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("banner.png") no-repeat center center;
+      }
+
+      /* Ajuste de Hero */
+      .hero-text h1 {
+        font-size: 3.5rem;
+      }
+
+      /* Ajuste de botões */
+      .cta-btn {
+        font-size: 1.8rem;
+        max-width: 100%;
+        padding: 10px;
+      }
+
+      .cursos {
+        flex-wrap: nowrap;
+        gap: 0;
+      }
+
+      /* Empilhar cursos */
+      .cursos a {
+        width: 100%;
+        font-size: 1rem;
+        padding: 8px;
+      }
+
+      /* Layout dos cards: 2 por linha */
+      .row .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 0.7rem;
+      }
+
+      header {
+        padding: 0.7rem;
+      }
+
+      .lead {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+    }
+
+    @media (max-width: 560px) {
+
+      header {
+        padding: 0.4rem;
+      }
+
+      header h2 {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      /* Títulos menores */
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .info-lead {
+        text-align: justify;
+      }
+
+      .cursos {
+        gap: 0;
+        flex-wrap: wrap;
+      }
+
+      .cursos a {
+        width: 100%;
+      }
+
+      .lead {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      /* Botão CTA menor */
+      .cta-btn {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      /* Layout dos cards: 1 por linha */
+      .row .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="bg-white shadow text-center">
+    <h2 style="color: #283d50;">PROVOC – Plataforma de Reconhecimento e Orientação Vocacional</h2>
+  </header>
+
+  <section class="hero">
+    <div class="container row align-items-center">
+      <div class="col-md-8 hero-text">
+        <h1>Descubra sua <span>vocação!</span></h1>
+        <p class="lead">Responda ao nosso teste vocacional via chat e encontre a carreira ideal para você.</p>
+        <button type="button" class="cta-btn">Fazer o teste agora</button>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section class="cursos">
+    <a class="c1" href="https://ifce.edu.br/sobral/campus-sobral/cursos/tecnicos">Técnicos</a>
+    <a class="c2" href="https://ifce.edu.br/sobral/campus-sobral/cursos/superiores">Superiores</a>
+    <a class="c3" href="https://ifce.edu.br/sobral/campus-sobral/cursos/posgraduacoes">Pós-graduações</a>
+    <a class="c4" href="https://ifce.edu.br/sobral/campus-sobral/cursos/cursos-de-extensao">Extensão</a>
+  </section>
+
+  <section id="informacoes" class="container text-center py-5">
+    <h2 style="color: #283d50;">Como Funciona?</h2>
+    <p class="info-lead">
+      O teste vocacional do IFCE Sobral (PROVOC) foi desenvolvido para interagir com você, realizar o mapeamento dos seus interesses e habilidades por meio de perguntas estratégicas e gerar um relatório personalizado, indicando cursos oferecidos pela instituição relacionados ao seu perfil.
+    </p>
+    <div class="row mt-4">
+      <div class="col-md-3 col-sm-6 d-flex">
+        <div class="info-card">
+          <img src="./imgs/chat.png" alt="Passo 1" class="img-fluid">
+          <h4>Chat AI</h4>
+          <p>Tenha acesso a um chat interativo para coleta de informações sobre seus interesses e habilidades.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 d-flex">
+        <div class="info-card">
+          <img src="./imgs/robo.png" alt="Passo 2" class="img-fluid">
+          <h4>Receba a Análise</h4>
+          <p>Obtenha a análise das suas respostas com IA para identificar seu perfil vocacional.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 d-flex">
+        <div class="info-card">
+          <img src="./imgs/relatorio.png" alt="Passo 3" class="img-fluid">
+          <h4>Relatório</h4>
+          <p>Baixe um relatório personalizado com sugestões de cursos oferecidos pela instituição.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 d-flex">
+        <div class="info-card">
+          <img src="./imgs/graduacao.png" alt="Passo 4" class="img-fluid">
+          <h4>Descubra sua Carreira</h4>
+          <p>Obtenha o destaque para cursos específicos do IFCE com informações detalhadas.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 IFCE Sobral - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <svg width="0" height="0">
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" />
+      <feDisplacementMap in="SourceGraphic" scale="5" />
+    </filter>
+  </svg>
+
+</body>
+
+</html>

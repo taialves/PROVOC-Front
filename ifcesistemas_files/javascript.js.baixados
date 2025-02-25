@@ -1,0 +1,100 @@
+//Retorno do root
+function getRoot()
+{
+	//facilita trabalhar com o caminho absoluto do site
+	var root="https://"+document.location.hostname+"/formRED/";
+	return root;
+}
+
+//alert(getRoot());
+
+function getCaptcha()
+{
+	grecaptcha.ready(function() {
+        grecaptcha.execute('6LfisN4UAAAAADxKm5BXpVXKNJL75EgMIXumFQjw', {action: 'homepage'}).then(function(token) {
+			//recebe a id g-recaptcha-response
+            const gRecaptchaResponse=document.querySelector("#g-recaptcha-response").value=token;
+			//console.log(token);
+
+		});
+		
+		setInterval(function() {
+			grecaptcha.execute('6LfisN4UAAAAADxKm5BXpVXKNJL75EgMIXumFQjw', {action: 'homepage'}).then(function(token) {
+				//recebe a id g-recaptcha-response
+				const gRecaptchaResponse=document.querySelector("#g-recaptcha-response").value=token;
+				//console.log(token);
+			});
+		}, 60000);
+	});
+};
+
+getCaptcha();
+
+function verificaExtensao2($input) {
+      // var extPermitidas = ['jpg', 'png', 'gif', 'pdf', 'txt', 'doc', 'docx'];
+	  var extPermitidas = ['pdf'];
+      var extArquivo = $input.value.split('.').pop(); 
+
+      if(typeof extPermitidas.find(function(ext){ return extArquivo == ext; }) == 'undefined') {
+        alert('Extensão "' + extArquivo + '" não permitida! Favor inserir um anexo com a seguinte extensão: .pdf');
+        return false;
+      } else {
+      //lert('Ok!');
+      }
+    };
+
+
+//Ajax do formulário de cadastro
+$("#formCadastro1").on("submit", function(event){
+  //evita o refresh da página
+  event.preventDefault();
+
+//Funciona para 1 arquivo
+//var dados = new FormData($(this)[0]);
+  var dados = new FormData($("form[name='formCadastro1']")[0]);
+
+
+//  var file_data = object.get().files;
+ // var other_data = $('form').serialize(); //page_id=&category_id=15&method=upload&required%5Bcategory_id%5D=Category+ID
+
+ // dados.append("file", file_data);
+  //para enviar todos os dados dos inputs
+//  var dados=$(this).serialize();
+
+  //abrir função do Ajax
+  $.ajax({
+    url: getRoot()+'controllers/controllerRED',
+    dataType: 'json',
+    data: dados,
+    //async: false,
+    contentType: false,
+    processData: false,
+    //cache: false,
+    type: 'post',
+    success: function(response){
+
+      //zera o conteúdo da div
+      $('.retornoCad').empty();
+      //caso o retorno contenha um erro
+      if(response.retorno == 'erro'){
+        getCaptcha();
+        //passa os erros para a div
+        $.each(response.erros, function(key,value){
+          $('.retornoCad').append(value+'<br>');		
+        });
+
+      }else{
+        //caso não ocorra erro
+        //$('.retornoCad').append('Dados Enviados com sucesso!');
+        //console.log();
+        window.location.replace("sucesso.php");
+       //window.location.href=response.page;
+      }
+    }
+
+  });
+
+});
+
+ 
+

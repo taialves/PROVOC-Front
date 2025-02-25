@@ -1,0 +1,148 @@
+body {
+  background-color: #f8f9fa;
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero {
+  background: url("banner.png") no-repeat center center;
+  background-size: cover;
+  height: 60vh;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .container {
+  height: 100%;
+}
+
+.hero-text h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: left;
+  font-family: "Oswald", sans-serif;
+  color: #f8f9fa;
+  text-transform: uppercase;
+}
+
+.hero-text span {
+  color: #00e88f;
+}
+
+.lead {
+  color: #f8f9fa;
+  font-weight: 600;
+}
+
+.cta-btn {
+  margin-top: 30px;
+  width: 70%;
+  font-family: "Dekko", sans-serif;
+  /* Aplicando a fonte */
+  border-radius: 30px;
+  font-size: 2rem;
+  padding: 12px 24px;
+  background: rgba(4, 32, 15, 0.31);
+  border: 4px solid rgba(190, 190, 190, 0.67);
+  color: #f8f9fa;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 4px solid #f8f9fa;
+  filter: url(#rough);
+  z-index: -1;
+  border-radius: 30px;
+}
+
+.cta-btn:hover {
+  background-color: #17842a;
+  transform: scale(1.05);
+}
+
+.cursos {
+  width: 100%;
+  padding: 0;
+  display: flex;
+}
+
+.cursos a {
+  text-decoration: none;
+  color: #f8f9fa;
+  font-size: 1.4rem;
+  padding: 0px 10px;
+  display: block;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.cursos a:hover {
+  text-decoration: underline;
+  color: #f8f9fa;
+}
+
+.c1 {
+  background-color: #17842a;
+}
+
+.c2 {
+  background-color: rgb(26, 106, 180);
+}
+
+.c3 {
+  background-color: rgb(163, 129, 18);
+}
+
+.c4 {
+  background-color: rgb(201, 59, 59);
+}
+
+#informacoes p {
+  font-size: 1rem;
+}
+
+.info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-card img {
+  max-width: 80px;
+  margin-bottom: 15px;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 1rem;
+  color: #555;
+}
