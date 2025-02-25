@@ -15,7 +15,6 @@
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet" />
-  <link href="style.css" rel="stylesheet" />
 
   <!-- Favicons -->
   <link href="https://sistemas.sobral.ifce.edu.br/formRED/img/favicon7.png" rel="icon">
@@ -48,9 +47,9 @@
       padding: 1rem;
     }
 
-    /* ========================= HERO SECTION ========================= */
-    .hero {
-      background: url("banner.png") no-repeat center center;
+    /* ========================= banner SECTION ========================= */
+    .banner {
+      background: url("./imgs/banner.png") no-repeat center center;
       background-size: cover;
       height: 60vh;
       padding: 10vh 20px;
@@ -60,12 +59,11 @@
       text-align: center;
     }
 
-    .hero .container {
+    .banner .container {
       height: 100%;
     }
 
-    /* Ajuste para títulos responsivos */
-    .hero-text h1 {
+    .banner-text h1 {
       font-size: 4rem;
       font-weight: bold;
       text-align: left;
@@ -79,7 +77,7 @@
       font-weight: 600;
     }
 
-    .hero-text span {
+    .banner-text span {
       color: #00e88f;
     }
 
@@ -87,7 +85,6 @@
       margin-top: 30px;
       width: 70%;
       font-family: "Dekko", sans-serif;
-      /* Aplicando a fonte */
       border-radius: 30px;
       font-size: 2rem;
       padding: 12px 24px;
@@ -211,17 +208,15 @@
     /* ========================= RESPONSIVIDADE ========================= */
     @media (min-width: 561px) and (max-width: 768px) {
 
-      .hero {
+      .banner {
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-          url("banner.png") no-repeat center center;
+          url("./imgs/banner.png") no-repeat center center;
       }
 
-      /* Ajuste de Hero */
-      .hero-text h1 {
+      .banner-text h1 {
         font-size: 3.5rem;
       }
 
-      /* Ajuste de botões */
       .cta-btn {
         font-size: 1.8rem;
         max-width: 100%;
@@ -233,14 +228,12 @@
         gap: 0;
       }
 
-      /* Empilhar cursos */
       .cursos a {
         width: 100%;
         font-size: 1rem;
         padding: 8px;
       }
 
-      /* Layout dos cards: 2 por linha */
       .row .col-md-3 {
         flex: 0 0 50%;
         max-width: 50%;
@@ -269,8 +262,7 @@
         font-weight: 500;
       }
 
-      /* Títulos menores */
-      .hero-text h1 {
+      .banner-text h1 {
         font-size: 2.5rem;
       }
 
@@ -292,13 +284,11 @@
         font-weight: 500;
       }
 
-      /* Botão CTA menor */
       .cta-btn {
         font-size: 1.5rem;
         font-weight: 500;
       }
 
-      /* Layout dos cards: 1 por linha */
       .row .col-md-3 {
         flex: 0 0 100%;
         max-width: 100%;
@@ -334,9 +324,7 @@
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li><a href="/ifce/provoc.php">Clique aqui para acessar somente a Landing Page do PROVOC</a></li>
-
-
+          <li><a href="/ifce/provoc.html">Clique aqui para acessar somente a Landing Page do PROVOC</a></li>
 
         </ul>
       </nav>
@@ -359,9 +347,9 @@
       <h2 style="color: #283d50;">PROVOC – Plataforma de Reconhecimento e Orientação Vocacional</h2>
     </header>
 
-    <section class="hero">
+    <section class="banner">
       <div class="container row align-items-center">
-        <div class="col-md-8 hero-text">
+        <div class="col-md-8 banner-text">
           <h1>Descubra sua <span>vocação!</span></h1>
           <p class="lead">Responda ao nosso teste vocacional via chat e encontre a carreira ideal para você.</p>
           <button type="button" class="cta-btn">Fazer o teste agora</button>
